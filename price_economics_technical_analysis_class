@@ -6,12 +6,10 @@ import numpy as np
 import datapungi_fed as dpf
 from bcb import sgs
 import yfinance as yf
-import investpy as inv
 import talib
 from talib import RSI, ROC,  WILLR
 
 import bs4 as bs
-import pickle
 import requests
 import json
 
