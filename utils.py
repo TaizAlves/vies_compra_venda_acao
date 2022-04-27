@@ -47,10 +47,10 @@ class Dados_Fundamentalista:
 
         
 
+if __name__ == '__main__':
+    #inicializando
+    ticker = Dados_Fundamentalista('ABEV3.SA')
+    info, market_data, actions, financial, major_holders, balance_sheet, calendar= ticker.ticker_yf_dadosempresa_fundamentalista()
 
-#inicializando
-ticker = Dados_Fundamentalista('ABEV3.SA')
-info, market_data, actions, financial, major_holders, balance_sheet, calendar= ticker.ticker_yf_dadosempresa_fundamentalista()
-
-print(info)
+    print(info)
 
