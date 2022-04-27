@@ -6,6 +6,10 @@ import investpy as inv
 
 
 class Dados_Fundamentalista:
+    """
+    Informações para análise Fundamentalista
+    
+    """
     def __init__(self, stock):
         self.stock = stock
         
@@ -19,6 +23,13 @@ class Dados_Fundamentalista:
 
 
     def ticker_yf_dadosempresa_fundamentalista(self):
+        """
+        Coletando dados fundamentalista através da ipi yfinance
+
+        stock format: 'ABEV3.SA' para as ações brasileiras
+        Return: info, market_data, actions, financial, major_holders, balance_sheet, calendar
+
+        """
 
         ticker = yf.Ticker(self.stock)
 
