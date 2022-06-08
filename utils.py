@@ -101,13 +101,44 @@ class Dados_Fundamentalista:
 
 
 
+def mensal_diario_rate(serie_mensal):
+    serie_day= serie_mensal.asfreq('B', method = 'pad' )
+    daily = serie_day[serie_day.columns[0]].apply( lambda x:  round((1 + x) ** (1/22) - 1,3) ).to_frame()
+    nome= daily.columns[0]
+    daily.rename({nome: nome[:-6]+'diario' }, axis= 'columns', inplace = True)
+    
+    return daily
 
+def mensal_diario_rate_nome(serie_mensal, name):
+    serie_day= serie_mensal.asfreq('B', method = 'pad' )
+    daily = serie_day.apply( lambda x:  round((1 + x) ** (1/22) - 1,3) ).to_frame()
+    nome= daily.columns[0]
+    daily.rename({nome: name }, axis= 'columns', inplace = True)
+    
+    
+    return daily
+
+def cenversao_simples_mensal_diario_B(serie_mensal):
+    serie_day= serie_mensal.asfreq('B', method = 'pad' )
+    daily = serie_day[serie_day.columns[0]].apply( lambda x:  round( x/22  ,3) ).to_frame()
+    nome= daily.columns[0]
+    daily.rename({nome: nome+'_diario' }, axis= 'columns', inplace = True)
+    
+    return daily
+
+def conversao_simples_mensal_diario_B_nome(serie_diaria, name):
+    serie_day= serie_diaria.asfreq('B', method = 'pad' )
+    daily = serie_day.apply( lambda x:  round( x/22  ,3) ).to_frame()
+    nome= daily.columns[0]
+    daily.rename({nome: name }, axis= 'columns', inplace = True)
+    
+    return daily
         
 
         
 
 if __name__ == '__main__':
-    #inicializando
+    #instanciando
     ticker = Dados_Fundamentalista('ABEV3.SA')
     #info, market_data, actions, financial, major_holders, balance_sheet, calendar= ticker.#ticker_yf_dadosempresa_fundamentalista()
     ticker.setStock('ABEV3') 
