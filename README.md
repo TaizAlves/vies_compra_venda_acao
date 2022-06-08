@@ -1,7 +1,12 @@
-Previsao_tendencia_acao
+Projeção de Volume para ativos de empresas de pequeno e médio porte (Small Caps) e para lançamento de IPO´s.
 ==============================
 
-Projeção de Viés de compra e venda da AMBEV na B3 
+Título: 
+Projeção de Volume para ativos de empresas de pequeno e médio porte (Small Caps) e para lançamento de IPO´s.
+
+Objetivo:
+Fornecer aos investidores/empresas o volume futuro de negociações de seus ativos validando a eficácia do uso dos indicadores técnicos.
+
 
 Project Organization
 ------------
